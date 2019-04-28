@@ -8,39 +8,39 @@ axios.interceptors.request.use((config) => {
 
 export function useGOT(){
 
-    const exceptions = [
+    const additional_characters = [
         {_id: "0", name: "Beric Dondarrion", house: "", pagerank:{rank:0}, titles:[],  updatedAt: "2019-04-10T07:16:16.842Z" , image: "https://vignette.wikia.nocookie.net/gameofthrones/images/a/ab/BericDondarrionBeyondtheWallRhllorSpeech.png/revision/latest?cb=20190215205301" },
         {_id: "1", name: "Little Sam", house: "", pagerank:{rank:0}, titles:[],  updatedAt: "2019-04-10T07:16:16.842Z" , image: "https://vignette.wikia.nocookie.net/gameofthrones/images/1/12/Sam_at_Oldtown.jpg/revision/latest?cb=20170808102046" }
     ]
 
-    const availables = [
-        "5cad9840b0c0ef00108e6530",
-        "5cad9840b0c0ef00108e652c",
-        "5cad9840b0c0ef00108e652d",
-        "5cad9840b0c0ef00108e652e",
-        "5cad9840b0c0ef00108e654c",
-        "5cad9840b0c0ef00108e654d",
-        "5cad9840b0c0ef00108e654e",
-        "5cad9840b0c0ef00108e65df",
-        "5cad9840b0c0ef00108e6579",
-        "5cad9840b0c0ef00108e6532",
-        "5cad9840b0c0ef00108e6560",
-        "5cad9840b0c0ef00108e65e0",
-        "5cad9840b0c0ef00108e6554",
-        "5cad9840b0c0ef00108e6555",
-        "5cad9840b0c0ef00108e6575",
-        "5cad9840b0c0ef00108e65c4",
-
-        "5cad9840b0c0ef00108e659d",
-        "5cad9840b0c0ef00108e6565",
-        "5cad9840b0c0ef00108e6561",
-        "5cad9840b0c0ef00108e6591",
-        "5cad9840b0c0ef00108e6552",
-        "5cad9840b0c0ef00108e65c8",
-        "5cad9840b0c0ef00108e65ed",
-        "5cad9840b0c0ef00108e65a5",
-
-        "5cad9840b0c0ef00108e657a",
+    const got_challenge = [
+        "Jon_Snow",
+        "Sansa_Stark",
+        "Arya_Stark",
+        "Bran_Stark",
+        "Cersei_Lannister",
+        "Jaime_Lannister",
+        "Tyrion_Lannister",
+        "Daenerys_Targaryen",
+        "Yara_Greyjoy",
+        "Theon_Greyjoy",
+        "Melisandre",
+        "Jorah_Mormont",
+        "Sandor_Clegane", 
+        "Gregor_Clegane",
+        "Samwell_Tarly",
+        "Gilly",
+        //Little Sam
+        "Varys",
+        "Brienne_of_Tarth",
+        "Davos_Seaworth",
+        "Bronn",
+        "Podrick_Payne",
+        "Tormund", 
+        "Grey_Worm",
+        "Gendry",
+        //Beric Dondarrion
+        "Euron_Greyjoy",
     ]
 
     //states
@@ -63,14 +63,14 @@ export function useGOT(){
             let vivos = []
             let muertos = [] 
             res.map((item) => {
-                if(availables.indexOf(item._id) > -1){
+                if(got_challenge.indexOf(item.slug) > -1){
                     if (item.alive===true && item.image) vivos.push(item)
                     else if(item.image) muertos.push(item)    
                 }
             })
 
-            vivos.push(exceptions[0])
-            vivos.push(exceptions[1])
+            vivos.push(additional_characters[0])
+            vivos.push(additional_characters[1])
 
             setAlive(vivos.sort((a, b) => b.pagerank.rank - a.pagerank.rank))
             setDead(muertos.sort((a, b) => b.pagerank.rank - a.pagerank.rank))

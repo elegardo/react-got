@@ -14,11 +14,16 @@ p > span {
     opacity: 0.4;
     text-align: center;
 }
-.img {
+.image {
     position: relative;
     float: left;
-    height: 260px;
     background-position-y: 0;
-    background-repeat:   no-repeat;
-    background-size:     cover;
+    width: 400px;
+}
+.crop {
+    height: 300px;
+    overflow: hidden;
+}
+.divider{
+    margin-top: 1.5em;
 }
