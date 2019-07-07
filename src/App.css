@@ -24,6 +24,10 @@ p > span {
     height: 300px;
     overflow: hidden;
 }
+.crop-disabled {
+    height: 240px;
+    overflow: hidden;
+}
 .divider{
     margin-top: 1.5em;
 }

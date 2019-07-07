@@ -24,11 +24,11 @@
     "path": "^0.12.7",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
-    "semantic-ui-react": "^0.85.0",
-    "url-loader": "^1.1.2"
+    "semantic-ui-react": "^0.85.0"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "file-loader": "^4.0.0",
     "gh-pages": "^2.0.1",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",

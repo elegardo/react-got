@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Divider, Label, Header, Image, Card } from 'semantic-ui-react'
+import { Container, Label, Header, Image, Card } from 'semantic-ui-react'
+import gotHeader from '../img/got-header.jpg'
 
 import { useGOT } from '../hooks/useGOT'
 
@@ -24,7 +25,7 @@ const CharacterContainer = () => {
         <Container>
 
             <div className='divider'>
-                <Image src={'https://www.designmantic.com/blog/wp-content/uploads/2016/05/Game-of-Thrones-Logo-718x300.jpg'} fluid/>
+                <Image src={gotHeader} fluid/>
             </div>
 
             <div className='divider'>
@@ -82,7 +83,9 @@ const CharacterContainer = () => {
                 <Card.Group itemsPerRow={6} stackable>
                     {dead.map((item, key) =>
                         <Card key={key} raised color={getHouseColor(item.house)} >
-                            <Image src={item.image} disabled/>
+                            <div className="crop-disabled">
+                                <Image src={item.image} disabled/>
+                            </div>
                             <Card.Content>
                                 <Card.Header>{item.name}</Card.Header>
                                 {item.house}

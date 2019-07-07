@@ -38,18 +38,12 @@ module.exports = (env) => [
         use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
-        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
-        use: "url-loader"
-      },
-      {
-        test: /\.(jpg|png)$/,
-        use: {
-          loader: "url-loader",
-          options: {
-            limit: 25000,
-          },
+        test: /\.(png|jpg)$/, 
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
         },
-      },      
+      },
     ]
   },
   plugins: [
