@@ -12,6 +12,7 @@ module.exports = (env) => [
   entry: './src/index.js',
   output: {
     path: PATHS.build,
+    publicPath: '',
     filename: '[name].[contenthash].js'
   },
   module: {
