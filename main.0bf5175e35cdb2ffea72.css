@@ -1,0 +1,29 @@
+html, body {
+    background-color: #22262a !important;
+}
+p {
+    align-content: center;
+    background-color: #495285;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 6em;
+}
+p > span {
+    opacity: 0.4;
+    text-align: center;
+}
+.image {
+    position: relative;
+    float: left;
+    background-position-y: 0;
+    width: 400px;
+}
+.crop {
+    height: 300px;
+    overflow: hidden;
+}
+.divider{
+    margin-top: 1.5em;
+}
